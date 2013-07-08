@@ -24,14 +24,20 @@
         <span class="icon-bar"></span>
       </a>
       
-      <div class="nav-collapse collapse pull-right">
-        <ul class="nav nav-pills">
+      <div class="nav-collapse collapse">
+        <ul class="nav nav-pills pull-right">
           <li <?=current_url()==site_url() ? 'class="active"' : null;?>>
           	<a href="<?=base_url();?>">Home</a>
           </li>
           <li <?=current_url()==site_url('add-business') ? 'class="active"' : null;?>>
           	<a href="<?=base_url('add-business');?>">Add Your Business</a>
-          </li>         
+          </li>  
+          <li <?=current_url()==site_url('user/login') ? 'class="active"' : null;?>>
+            <a href="<?=base_url('user/login');?>">Login</a>
+          </li>  
+          <li <?=current_url()==site_url('user/sign_up') ? 'class="active"' : null;?>>
+            <a href="<?=base_url('user/sign_up');?>">Sign Up</a>
+          </li>          
         </ul>     
       </div><!--/.nav-collapse-->
     </div>
@@ -40,29 +46,50 @@
 </header>
 
 <div class="container">
-  <?=$this->load->view($template);?>
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well">
+        <h1><a href="<?=base_url();?>">Happy Trip</a></h1>
+      </div>
+      <div class="row-fluid">
+        <ul class="nav nav-stacked nav-tabs nav-pills">
+          <?php foreach($category as $item):?>
+          <li><a href="<?=$item->id;?>"><?=$item->name;?></a></li>
+          <?php endforeach;?>
+        </ul>
+      </div>
+    </div><!--/.span3-->
+
+    <div class="span9">
+      <?=$this->load->view($template);?>
+    </div><!--/.span9-->
+  </div><!--/.row-fluid-->  
 </div>
 
-<hr>
+
 <footer class="footer">
   <div class="container">
-    <p>Footer</p>
+    <hr>
+    <p>&copy; <?=date('Y');?> &middot; <?=$_SERVER['HTTP_HOST'];?> &middot; <?=anchor(base_url('/terms-of-service'),'Terms of Service');?></p>
   </div>
 </footer>
 
 <script src="<?=assets_url();?>js/jquery.js"></script>
 <script src="<?=assets_url();?>js/bootstrap.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<?php if(current_url()==site_url()):?>
 <script>
 function initialize() {
   var mapOptions = {
     center: new google.maps.LatLng(-34.397, 150.644),
     zoom: 8,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeControl: false,
   };
   var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+<?php endif;?>
 </body>
 </html>

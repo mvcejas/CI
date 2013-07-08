@@ -1,54 +1,50 @@
 <div class="row-fluid">
-	<div class="span3">
-		<div class="well">
-			<h1><a href="<?=base_url();?>">Happy Trip</a></h1>
-		</div>
-		<div class="well">
-			<ul class="nav">
-				<li><a href="#">Test</a></li>
-				<li><a href="#">Test</a></li>
-				<li><a href="#">Test</a></li>
-				<li><a href="#">Test</a></li>
-				<li><a href="#">Test</a></li>
-				<li><a href="#">Test</a></li>
-			</ul>
-		</div>
-	</div><!--/.span3-->
-
-	<div class="span9">
-		<div class="row-fluid">
-			<?=form_open('',array('class'=>'form-horizontal'));?>
-				<fieldset>
-					<legend>Sign Up!</legend>
-					<div class="control-group">
-						<label class="control-label">First Name</label>
-						<div class="controls">
-						<?=form_input(array('name'=>'firstname','class'=>'span12'));?>
-						</div>
+	<div class="span6">
+		<?=form_open();?>
+			<fieldset>
+				<legend>Add your business</legend>
+				<div class="control-group">
+					<label class="control-label">Establishment Name</label>
+					<div class="controls">
+					<?=form_input(array('name'=>'Establishment','class'=>'span12'));?>
 					</div>
-					<div class="control-group">
-						<label class="control-label">Last Name</label>
-						<div class="controls">
-						<?=form_input(array('name'=>'lastname','class'=>'span12'));?>
-						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Address 1</label>
+					<div class="controls">
+					<?=form_input(array('name'=>'Address1','class'=>'span12'));?>
 					</div>
-					<div class="control-group">
-						<label class="control-label">Email Address</label>
-						<div class="controls">
-						<?=form_input(array('name'=>'email','class'=>'span12'));?>
-						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Address 2</label>
+					<div class="controls">
+					<?=form_input(array('name'=>'Address2','class'=>'span12'));?>
 					</div>
-					<div class="control-group">
-						<label class="control-label">Password</label>
-						<div class="controls">
-						<?=form_password(array('name'=>'password','class'=>'span12'));?>
-						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">City</label>
+					<div class="controls">
+					<?=form_input(array('name'=>'City','class'=>'span12'));?>
 					</div>
-					<div class="form-actions">
-						<?=form_submit(array('value'=>'Sign Up!','class'=>'btn'));?>
+				</div>
+				<div class="control-group">
+					<label class="control-label">State</label>
+					<div class="controls">
+					<?=form_input(array('name'=>'State','class'=>'span12'));?>
 					</div>
-				</fieldset>
-			<?=form_close();?>
-		</div>
-	</div><!--/.span9-->
-</div><!--/.row-fluid-->
+				</div>
+				<div class="control-group">
+					<label class="control-label">Postal Code</label>
+					<div class="controls">
+					<?=form_input(array('name'=>'PostalCode','class'=>'span12'));?>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="span3">
+						<?=form_submit(array('value'=>'Submit','class'=>'btn btn-block'));?>
+					</div>
+				</div>
+			</fieldset>
+		<?=form_close();?>
+	</div>
+</div>
