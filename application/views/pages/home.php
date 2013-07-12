@@ -1,14 +1,25 @@
-<div class="well">
-	<h3>Discover your nearest trip!</h3>
-	<div class="row-fluid">
-		<?=form_open(base_url('search'),array('method'=>'get','class'=>'form-inline'));?>
-			<?=form_input(array('name'=>'q','placeholder'=>'Search ...','class'=>'span10'));?>
-			<?=form_submit(array('value'=>'Explore!','class'=>'btn span2'));?>
-		<?=form_close();?>
-	</div>
-</div>
-
-<div class="row-fluid">
-	<div id="map_canvas" class="span12">
-	</div>			
-</div>
+  <!-- BEGIN PAGE CONTAINER-->
+  <div class="container-fluid">
+    <!-- BEGIN PAGE HEADER-->
+    <div class="row-fluid">
+      <div class="span12">
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->   
+        <h3 class="page-title">
+          <?=$page_title;?>
+        </h3>
+        <ul class="breadcrumb">
+          <li>
+            <i class="icon-home"></i>
+            <a href="<?=base_url();?>">Home</a> 
+            <span class="icon-angle-right"></span>
+          </li>
+          <li><a href="<?=current_url();?>"><?=$page_name;?></a></li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB--> 
+      </div>
+    </div>
+    <!-- END PAGE HEADER-->
+    <!-- CONTENT BODY GOES HERE >>>> -->
+    <?php var_dump(strpos(current_url(),'access'));?>
+  </div>   
+  <!-- END PAGE CONTAINER-->

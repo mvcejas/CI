@@ -38,9 +38,8 @@
 |
 */
 
-$route['default_controller'] = "main";
+$route['default_controller'] = "admin";
 $route['404_override'] = '';
-$route['add-business'] = 'main/add_business';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
